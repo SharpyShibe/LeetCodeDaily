@@ -33,9 +33,7 @@ private:
         end = start;
 
         while(end < s.length() && isdigit(s.at(end))) end++;
-        if(end < s.length() && !isdigit(s.at(end))) end--;
-        if(end >= s.length()) end = s.length()-1;
-
+        end--;
 
      }
 
