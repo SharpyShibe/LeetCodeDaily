@@ -4,8 +4,8 @@ int longestNiceSubarray(int* nums, int numsSize) {
     int seenBitmask = 0;
 
     for (int end=0; end<numsSize; end++) {
-        while (start<end && (seenBitmask&nums[end]) !=0 )
-                seenBitmask ^= nums[start++];
+        while ((seenBitmask & nums[end]) !=0)//bitmask clashes
+                 seenBitmask ^= nums[start++];//shrink window
 
         seenBitmask |= nums[end];
 
